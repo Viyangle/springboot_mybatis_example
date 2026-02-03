@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.viyangle.springboot_mybatis_example.mapper.DeptMapper">
+    <delete id="delete">
+        delete from dept where id = #{id};
+    </delete>
+
+    <select id="list" resultType="com.viyangle.springboot_mybatis_example.pojo.Dept">
+        select * from dept;
+    </select>
+</mapper>
