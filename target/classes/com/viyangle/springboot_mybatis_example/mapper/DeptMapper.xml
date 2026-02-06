@@ -7,10 +7,10 @@
         insert into dept(name, create_time, update_time) VALUES (#{name}, #{createTime}, #{updateTime})
     </insert>
     <delete id="delete">
-        delete from dept where id = #{id};
+        delete from dept where id = #{id}
     </delete>
 
     <select id="list" resultType="com.viyangle.springboot_mybatis_example.pojo.Dept">
-        select * from dept;
+        select * from dept
     </select>
 </mapper>
