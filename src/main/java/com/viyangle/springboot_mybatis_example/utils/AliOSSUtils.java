@@ -7,6 +7,7 @@ import com.aliyun.oss.common.auth.CredentialsProviderFactory;
 import com.aliyun.oss.common.auth.EnvironmentVariableCredentialsProvider;
 import com.aliyun.oss.common.comm.SignVersion;
 import com.aliyuncs.exceptions.ClientException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
@@ -17,10 +18,12 @@ import java.util.UUID;
  */
 @Component
 public class AliOSSUtils {
-
-    private String endpoint = "https://oss-cn-beijing.aliyuncs.com";
-    private String bucketName = "springbootweb-mybatis-tlias";
-    private String region = "cn-beijing";
+    @Value("${aliyun.oss.endpoint}")
+    private String endpoint;
+    @Value("${aliyun.oss.bucketName}")
+    private String bucketName;
+    @Value("${aliyun.oss.region}")
+    private String region;
 
     /**
      * 实现上传图片到OSS

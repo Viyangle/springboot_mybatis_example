@@ -61,4 +61,10 @@
     <select id="getById" resultType="com.viyangle.springboot_mybatis_example.pojo.Emp">
         select * from emp where id = #{id}
     </select>
+    <select id="getByUsernameAndPassword" resultType="com.viyangle.springboot_mybatis_example.pojo.Emp">
+        select *
+        from emp
+        where username = #{username}
+          and password = #{password};
+    </select>
 </mapper>
